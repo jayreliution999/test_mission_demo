@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_project_task_form_inherit" model="ir.ui.view">
+        <field name="name">project.task.form.inherit</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">
+            <page name="extra_info" position="after">
+                <page name="checklist" string="Checklist">
+                    <group>
+                        <group string="Checklist">
+                            <field name="checklist_ids" widget="many2many_checkboxes"/>
+                        </group>
+                        <group string="Completed">
+                            <field name="task_progress" widget="percentpie"/>
+                        </group>
+                    </group>
+                </page>
+            </page>
+        </field>
+    </record>
+</odoo>
